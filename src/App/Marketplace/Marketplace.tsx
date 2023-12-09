@@ -15,6 +15,9 @@ export default function Marketplace ({
 	const [query, setQuery] = React.useState("");
 	const inputRef = React.useRef<HTMLInputElement>(null);
 
+	const [pageSize, setPageSize] = React.useState(20);
+	const [pageNumber, setPageNumber] = React.useState(0);
+
 	const iconNames = iconNamesJson.iconNames;
 	const filterWords = query.trim().split(" ").map(word => word.trim()).filter(word => word);
 	const filteredIconNames = iconNames.filter(iconName => {
@@ -24,6 +27,10 @@ export default function Marketplace ({
 		}
 		return false;
 	});
+
+	const startIndex = pageNumber * pageSize;
+	const endIndex = startIndex + pageSize;
+	const iconsOnCurrentPage = filteredIconNames.slice(startIndex, endIndex);
 
 	const handleKeydown = (ev: KeyboardEvent) => {
 		switch (ev.key) {
@@ -56,7 +63,7 @@ export default function Marketplace ({
 				</header>
 
 				<section className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-0.5 select-none">
-					{filteredIconNames.map((iconName, k) => <IconBox key={k} name={iconName}
+					{iconsOnCurrentPage.map((iconName, k) => <IconBox key={k} name={iconName}
 						alreadyInCart={alreadyInCart(iconName)}
 						onClick={() => addItemToCart(iconName)} />)}
 				</section>
