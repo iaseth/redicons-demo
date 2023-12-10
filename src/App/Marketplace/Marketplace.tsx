@@ -15,7 +15,7 @@ export default function Marketplace ({
 	const [query, setQuery] = React.useState("");
 	const inputRef = React.useRef<HTMLInputElement>(null);
 
-	const [pageSize, setPageSize] = React.useState(20);
+	const [pageSize, setPageSize] = React.useState(40);
 	const [pageNumber, setPageNumber] = React.useState(0);
 
 	const iconNames = iconNamesJson.iconNames;
@@ -62,7 +62,7 @@ export default function Marketplace ({
 					<input className='px-3 py-3 w-full bg-zinc-950' value={query} ref={inputRef} onChange={e => setQuery(e.target.value)} />
 				</header>
 
-				<section className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-0.5 select-none">
+				<section className="icon-grid">
 					{iconsOnCurrentPage.map((iconName, k) => <IconBox key={k} name={iconName}
 						alreadyInCart={alreadyInCart(iconName)}
 						onClick={() => addItemToCart(iconName)} />)}

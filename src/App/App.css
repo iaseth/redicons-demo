@@ -21,3 +21,7 @@ h6, .h6, .p6 { @apply text-xs; }
 .mono {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, Monaco, "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 }
+
+section.icon-grid {
+	@apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-0.5 select-none;
+}
