@@ -5,12 +5,12 @@ import iconNamesJson from '../iconnames.json';
 
 
 interface MarketplaceProps {
-	addItemToCart: (itemName: string) => void,
+	addOrRemoveItem: (itemName: string) => void,
 	alreadyInCart: (itemName: string) => boolean
 }
 
 export default function Marketplace ({
-	addItemToCart, alreadyInCart
+	addOrRemoveItem, alreadyInCart
 }: MarketplaceProps) {
 	const [query, setQuery] = React.useState("");
 	const inputRef = React.useRef<HTMLInputElement>(null);
@@ -65,7 +65,7 @@ export default function Marketplace ({
 				<section className="icon-grid">
 					{iconsOnCurrentPage.map((iconName, k) => <IconBox key={k} name={iconName}
 						alreadyInCart={alreadyInCart(iconName)}
-						onClick={() => addItemToCart(iconName)} />)}
+						onButtonClick={() => addOrRemoveItem(iconName)} />)}
 				</section>
 			</section>
 		</section>

@@ -4,11 +4,12 @@ import JsonBlock from "./JsonBlock/JsonBlock";
 
 
 interface CartProps {
-	cartItems: string[]
+	cartItems: string[],
+	addOrRemoveItem: (itemName: string) => void
 }
 
 export default function Cart ({
-	cartItems
+	cartItems, addOrRemoveItem
 }: CartProps) {
 
 	return (
@@ -22,7 +23,7 @@ export default function Cart ({
 					{cartItems.map((iconName, k) => <IconBox key={k} name={iconName}
 						idx={k+1}
 						alreadyInCart={true}
-						onClick={() => {}} />)}
+						onButtonClick={() => addOrRemoveItem(iconName)} />)}
 				</section>
 			</section>
 

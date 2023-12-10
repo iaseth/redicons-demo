@@ -37,3 +37,7 @@ section.icon-grid {
 ::-webkit-scrollbar-thumb {
 	@apply bg-zinc-800 rounded hover:bg-red-600;
 }
+
+::-webkit-scrollbar-corner {
+	@apply bg-transparent;
+}

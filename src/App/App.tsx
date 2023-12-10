@@ -20,7 +20,17 @@ export default function App () {
 	const addItemToCart = (itemName: string) => {
 		setCartItems(items => [...items, itemName]);
 	};
+	const removeItemFromCart = (itemName: string) => {
+		setCartItems(items => items.filter(item => item !== itemName));
+	};
 	const alreadyInCart = (itemName: string) => cartItems.includes(itemName);
+	const addOrRemoveItem = (itemName: string) => {
+		if (alreadyInCart(itemName)) {
+			removeItemFromCart(itemName);
+		} else {
+			addItemToCart(itemName);
+		}
+	};
 
 	React.useEffect(() => {
 		fetch("redicons.json").then(data => data.json()).then(jo => {
@@ -33,10 +43,10 @@ export default function App () {
 	const getContent = () => {
 		switch (currentTab.name) {
 			case "Cart":
-				return <Cart {...{cartItems}} />;
+				return <Cart {...{cartItems, addOrRemoveItem}} />;
 			case "Market":
 			default:
-				return <Marketplace {...{addItemToCart, alreadyInCart}} />;
+				return <Marketplace {...{addOrRemoveItem, alreadyInCart}} />;
 		}
 	};
 
