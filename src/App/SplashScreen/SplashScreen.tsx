@@ -3,10 +3,13 @@
 
 export default function SplashScreen () {
 	return (
-		<main className="bg-red-600 text-white min-h-screen flex">
-			<header className="m-auto text-center">
-				<h1 className="text-5xl">RedIcon</h1>
-				<h4>Has not yet loaded.</h4>
+		<main className="bg-zinc-900 text-white min-h-screen flex">
+			<header className="m-auto p-6 text-center bg-zinc-950 rounded space-y-2">
+				<section className="py-2">
+					<img src="/redpapr-icon.svg" className="w-20 h-20 m-auto" />
+				</section>
+				<h1 className="text-4xl">RedIcon</h1>
+				<p>Please wait while icons are loading.</p>
 			</header>
 		</main>
 	);
