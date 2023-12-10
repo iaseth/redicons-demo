@@ -1,4 +1,5 @@
 import IconBox from "../Marketplace/IconBox/IconBox";
+import JsonBlock from "./JsonBlock/JsonBlock";
 
 
 
@@ -9,6 +10,7 @@ interface CartProps {
 export default function Cart ({
 	cartItems
 }: CartProps) {
+
 	return (
 		<section>
 			<section className="max-w-5xl mx-auto">
@@ -23,6 +25,8 @@ export default function Cart ({
 						onClick={() => {}} />)}
 				</section>
 			</section>
+
+			<JsonBlock {...{cartItems}} />
 		</section>
 	);
 }

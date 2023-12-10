@@ -50,6 +50,7 @@ export default function App () {
 			<main className='min-h-screen'>
 				{getContent()}
 			</main>
+			<section className='h-24'></section>
 			<Footer />
 		</div>
 	);
