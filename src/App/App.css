@@ -25,3 +25,15 @@ h6, .h6, .p6 { @apply text-xs; }
 section.icon-grid {
 	@apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-0.5 select-none;
 }
+
+::-webkit-scrollbar {
+	@apply bg-zinc-950;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-zinc-800 rounded hover:bg-red-600;
+}
