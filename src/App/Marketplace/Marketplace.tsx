@@ -15,7 +15,9 @@ export default function Marketplace ({
 	const [query, setQuery] = React.useState("");
 	const inputRef = React.useRef<HTMLInputElement>(null);
 
+	// @ts-ignore
 	const [pageSize, setPageSize] = React.useState(40);
+	// @ts-ignore
 	const [pageNumber, setPageNumber] = React.useState(0);
 
 	const iconNames = iconNamesJson.iconNames;
