@@ -33,7 +33,7 @@ export default function App () {
 	};
 
 	React.useEffect(() => {
-		fetch("redicons.json").then(data => data.json()).then(jo => {
+		fetch("json/redicons.json").then(data => data.json()).then(jo => {
 			const icons = jo.icons;
 			red.addIcons(icons);
 			setIconsLoaded(true);

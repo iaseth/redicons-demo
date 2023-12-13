@@ -47,7 +47,7 @@ export default function Marketplace ({
 				}
 				break;
 			default:
-				console.log(`You pressed: '${ev.key}'`)
+				console.log(`You pressed: '${ev.key}'`);
 		}
 	};
 	React.useEffect(() => {
